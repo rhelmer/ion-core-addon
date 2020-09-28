@@ -11,6 +11,8 @@
   onDestroy(unsubscribe);
 
   dispatchFxEvent({ removeBadgeCallout: true });
+
+  console.debug(ion);
 </script>
 
 <style>
@@ -21,7 +23,7 @@
 </style>
 
 <main>
-  {#if 'availableStudies' in ion > 0}
+  {#if ion && 'availableStudies' in ion}
     <EnrollmentButton enrolled={ion.enrolled} />
 
     {#each ion.availableStudies as study}
